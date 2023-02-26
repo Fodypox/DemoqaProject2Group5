@@ -10,6 +10,8 @@ public class SliderTC1 extends UtilityClass {
         driver.get("https://demoqa.com/slider/");
         // Find the slider element and get its location
         WebElement slider = driver.findElement(By.className("range-slider"));
+
+
         int sliderWidth = slider.getSize().getWidth();
         int sliderX = slider.getLocation().getX();
         int sliderY = slider.getLocation().getY();
@@ -23,6 +25,8 @@ public class SliderTC1 extends UtilityClass {
         Wait(2);
         Action moveToRight = action.moveByOffset(sliderX+intersectionPos,sliderY).clickAndHold().moveByOffset(moveToPoint,0).release().build();
         moveToRight.perform();
+
+
 
         quitDriver(2);
 
