@@ -19,13 +19,14 @@ public class TestCase_3 extends UtilityClass {
         js.executeScript("window.scrollBy(0, 500)");
         WebElement Resizable=driver.findElement(By.xpath("//span[text()='Resizable']"));
         Resizable.click();
-        String expectedResult="https://demoqa.com/resizable/";
+        String expectedResult="https://demoqa.com/resizable";
         String actualResult=driver.getCurrentUrl();
         if(actualResult.equals(expectedResult)){
             System.out.println("passed");
         }else{
             System.out.println("failed");
         }
+
         System.out.println(actualResult);
     }
 }

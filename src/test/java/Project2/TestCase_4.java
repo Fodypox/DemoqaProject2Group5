@@ -20,7 +20,7 @@ public class TestCase_4 extends UtilityClass {
         tooltips.click();
         String actualResult= driver.getCurrentUrl();
         System.out.println(actualResult);
-        String expectedResult=" https://demoqa.com/tooltip/";
+        String expectedResult=" https://demoqa.com/tooltip";
         if(actualResult.equals(expectedResult)){
             System.out.println("passed");
         }else{

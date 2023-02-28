@@ -19,7 +19,7 @@ public class TestCase_2 extends UtilityClass {
         driver.getCurrentUrl();
         System.out.println(driver.getCurrentUrl());
         String actualResult= driver.getCurrentUrl();
-        String expectedResult="https://demoqa.com/interaction/";
+        String expectedResult="https://demoqa.com/interaction";
         if(actualResult.equals(expectedResult)){
             System.out.println("passed");
         }else{
