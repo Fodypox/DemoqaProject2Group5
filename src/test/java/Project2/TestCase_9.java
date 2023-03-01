@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
-public class TestCase_9 extends UtilityClass{
+public class TestCase_9 extends UtilityClass {
     public static void main(String[] args) {
         driver.get("https://demoqa.com/resizable/");
 
@@ -26,23 +26,13 @@ public class TestCase_9 extends UtilityClass{
 //        interactionButton.click();
 
 
-
-        Wait(6);
+        Wait(3);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("window.scrollBy(0, 3000)");
 //        //<span class="text">Resizable</span>
 //        Wait(6);
 //        WebElement resizibleButton=driver.findElement(By.xpath("//span[text()='Resizable']"));
 //        resizibleButton.click();
-
-
-
-
-
-
-
-
-
 
 
         Wait(3);
@@ -83,23 +73,17 @@ public class TestCase_9 extends UtilityClass{
 //            System.out.println("test is pass: ");
 //        }
 // expect result 200 wider
-        String actualResult=sizeTwo;
-        String expectedResult= "width: 400px; height: 200px;";
-        if (actualResult.equals(expectedResult)){
+        String actualResult = sizeTwo;
+        String expectedResult = "width: 400px; height: 200px;";
+        if (actualResult.equals(expectedResult)) {
             System.out.println("teste is: " + true + "it should be: width: 400px; height: 200px;");
-        }else {
+        } else {
             System.out.println("taste is: " + false + " - it should be: width: 400px; height: 200px; but actual result is: " + sizeTwo);
             System.out.println(" NOTE: So by the step we drow box down and our expectation was box should get width by 200 px witch is not possible" +
                     "so the goal of the test of achived ! Its negative result! ");
 
 
-            //System.out.print("CONGRATULATIONS!".repeat(100));
         }
-
-
-
-
-
 
         quitDriver(5);
     }
