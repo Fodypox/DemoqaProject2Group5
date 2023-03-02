@@ -33,8 +33,9 @@ public class ResizingTest extends UtilityClass{
         Wait(2);
 
         WebElement box1 = driver.findElement(By.xpath("//*[@id='resizableBoxWithRestriction']"));
+        int boxSize1 = box1.getSize().width;
         String size = box1.getAttribute("style");
-        System.out.println(size);
+        System.out.println(boxSize1);
         WebElement elem1 = driver.findElement(By.xpath("//*[@id='resizableBoxWithRestriction']/span"));
 
 
@@ -42,18 +43,20 @@ public class ResizingTest extends UtilityClass{
         Wait(3);
         Action rts = action.clickAndHold(elem1).moveByOffset(100,0).release().build();
         rts.perform();
+
+        int boxSize2 = box1.getSize().width;
         Wait(3);
         Action rts1 = action.clickAndHold(elem1).moveByOffset(0,100).release().build();
         rts1.perform();
         String size2 = box1.getAttribute("style");
-        System.out.println(size2);
+        System.out.println(boxSize2);
 
 
 
-        if (size.equals(size2)){
-            System.out.println("test is failed");
-        }else {
+        if (boxSize1+100==boxSize2){
             System.out.println("test is passed");
+        }else {
+            System.out.println("test is filed");
         }
         System.out.println("-".repeat(50));
 
