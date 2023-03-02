@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class TestNG_ResizingBox extends UtilityClass {
     @Test
-    public void titleTest(){
+    public void resizingTitleTest(){
         driver.get("https://demoqa.com/resizable/");
         String actualUrl =  driver.getCurrentUrl();
         String exceptionURL = "https://demoqa.com/resizable/";
@@ -17,7 +17,8 @@ public class TestNG_ResizingBox extends UtilityClass {
     }
     @Test
     public void resizingTest(){
-        titleTest();
+        driver.get("https://demoqa.com/resizable/");
+
         Wait(3);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
