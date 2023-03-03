@@ -1,30 +1,23 @@
-package Project2;
-
+import Project2.UtilityClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-public class ResizingTest extends UtilityClass{
-    public static void main(String[] args) {
+public class TestNG_ResizingBox extends UtilityClass {
+    @Test
+    public void resizingTitleTest(){
         driver.get("https://demoqa.com/resizable/");
         String actualUrl =  driver.getCurrentUrl();
         String exceptionURL = "https://demoqa.com/resizable/";
-        if (actualUrl.equals(exceptionURL)){
-            System.out.println("test is pass");
-        }else {
-            System.out.println("test is failed");
-        }
-        System.out.println("-".repeat(50));
-        String actualTitle = driver.getTitle();
-        String exceptionTitle = "DEMOQA";
-        if (actualTitle.equals(exceptionTitle)){
-            System.out.println("test is pass");
-        }else {
-            System.out.println("test is failed");
-        }
-        System.out.println("-".repeat(50));
+        Assert.assertEquals(actualUrl,exceptionURL,"filed");
+    }
+    @Test
+    public void resizingTest(){
+        driver.get("https://demoqa.com/resizable/");
 
         Wait(3);
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -51,17 +44,8 @@ public class ResizingTest extends UtilityClass{
         String size2 = box1.getAttribute("style");
         System.out.println(boxSize2);
 
+        Assert.assertEquals(boxSize1+100,boxSize2,"filed");
 
-
-        if (boxSize1+100==boxSize2){
-            System.out.println("test is passed");
-        }else {
-            System.out.println("test is filed");
-        }
-        System.out.println("-".repeat(50));
-
-
-        quitDriver(2);
-
+        quitDriver(6);
     }
 }
