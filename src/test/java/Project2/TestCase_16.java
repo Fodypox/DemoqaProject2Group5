@@ -7,7 +7,7 @@ import java.util.Calendar;
 
 public class TestCase_16 extends UtilityClass  {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         /*
         1. Go to the url: https://demoqa.com/date-picker/ 
